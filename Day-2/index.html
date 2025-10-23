@@ -10,27 +10,46 @@
       rel="stylesheet"
     />
     <style>
-      .hero {
-        background: url("https://source.unsplash.com/1600x600/?technology")
-          center/cover no-repeat;
-        color: white;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .feature-icon {
-        font-size: 3rem;
-        color: #0d6efd;
-      }
+        .hero {
+          background: url("https://source.unsplash.com/1600x900/?toys,kids")
+            center/cover no-repeat;
+          height: 100vh;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .overlay {
+          z-index: 1;
+        }
+        .hero .container {
+          z-index: 2;
+        }
+        .hero input.form-control {
+          padding: 0.75rem 1rem;
+          font-size: 1.1rem;
+        }
+        .hero .btn-lg {
+          padding: 0.75rem 2rem;
+          font-size: 1.1rem;
+        }
+      </style>
+
+      <!-- Animate.css CDN for subtle animations -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+    
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm"
+    style="background: rgba(0, 255, 0, 0.50); top: 0; left: 0"
+    >
       <div class="container">
-        <a class="navbar-brand" href="#">logo-bootstrap</a>
+        <a class="navbar-brand" href="#">ToyWorld</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -62,15 +81,52 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="py-5">
-      <div class="container">
-        <h1>Himanshu Sharma</h1>
+    <section id="hero" class="hero position-relative d-flex align-items-center">
+      <div
+        class="overlay position-absolute w-100 h-100"
+        style="background: rgba(0, 200, 200, 0.5); top: 0; left: 0"
+      ></div>
+
+      <div class="container text-center position-relative text-white">
+        <h1
+        >
+          Welcome to <span class="text-primary">ToyWorld</span>
+        </h1>
+        <p class="lead mb-4 ">
+          Discover the best toys, games, and gifts for kids of all ages.
+        </p>
+
+        <form
+          class="d-flex justify-content-center mb-4 "
+          role="search"
+        >
+          <input
+            class="form-control me-2 w-50 rounded-pill shadow-sm"
+            type="search"
+            placeholder="Search for toys..."
+            aria-label="Search"
+          />
+          <button class="btn btn-primary rounded-pill shadow-sm" type="submit">
+            Search
+          </button>
+        </form>
+
+        <div
+          class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp"
+        >
+          <a href="#" class="btn btn-outline-light btn-lg rounded-pill"
+            >Explore Features</a
+          >
+          <a href="#" class="btn btn-primary btn-lg rounded-pill"
+            >Get in Touch</a
+          >
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-      &copy; 2025 BrandName. All rights reserved.
+      &copy; 2025 toyworld. All rights reserved.
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
